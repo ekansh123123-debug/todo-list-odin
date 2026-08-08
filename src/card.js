@@ -19,7 +19,6 @@ export default function card(titel = "Add titel" , info = "Add Info", isChecked 
         box.classList.toggle("completed", cardCheckBox.checked);
     });
 
-
     box.append(cardTitel);
     box.append(cardInfo);
     box.append(cardCheckBox);
