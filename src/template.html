@@ -6,16 +6,37 @@
     <title>Todo List</title>
 </head>
 <body>
-    <button id="homeBtn">HOME</button>
-    <dialog id="dialog">
-        <form method="dialog">
-            <label for="title" id="title">Add Title</label>
-            <input type="text">
+    <header class="app-header">
+        <h1>My task</h1>
+        <div id="btn">
+            <button id="homeBtn">HOME</button>
+            <button id="completedTask">COMPLED TASK</button>
+            <button id="addBtn">ADD NEW TASK</button>
+        </div>
+    </header>
 
-            <label for="info">Add Details</label>
-            <input type="text">
-        </form>
-    </dialog>
+    <main id="todoContant"></main>
+
+    <div id="dialogDiv">
+        <dialog id="dialog">
+            <form method="dialog">
+                <div class="form-group">
+                    <label for="title" id="title">Add Title</label>
+                    <input type="text" required placeholder="Add Title....">
+                </div>
+                
+                <div class="form-group">
+                <label for="info">Add Details</label>
+                <input type="text" required placeholder="Information About task ...">
+                </div>
+
+                <div class="dialog-actions">
+                    <button type="button" id="cancelBtn">Cancel</button>
+                    <button type="submit" id="saveBtn">Add Task</button>
+                </div>
+            </form>
+        </dialog>
+    </div>
 
 </body>
 </html>
