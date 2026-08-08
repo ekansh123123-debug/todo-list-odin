@@ -1,6 +1,6 @@
 export default function card(titel = "Add titel" , info = "Add Info", isChecked = false) {
     const box = document.createElement("div");
-    box.classList.add("");
+    box.classList.add("todo-card");
 
     const cardTitel = document.createElement("h2");
     cardTitel.classList.add("todo-title");
