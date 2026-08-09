@@ -3,7 +3,6 @@ const createBox = () => {
     box.classList.add("todo-card");
     return box;
 }
-
 const createTitle = (title) =>{
     const cardTitle = document.createElement("h2");
     cardTitle.classList.add("todo-title");
@@ -18,7 +17,7 @@ const createInfo = (info) => {
     return cardInfo;
 }
 
-const createCheckbox = (isChecked) =>{
+const createCheckbox = (isChecked, box) =>{
     const cardCheckBox = document.createElement("input");
     cardCheckBox.classList.add("todo-checkbox");
     cardCheckBox.type = "checkbox";
@@ -27,6 +26,7 @@ const createCheckbox = (isChecked) =>{
     cardCheckBox.addEventListener("click",() =>{
         box.classList.toggle("completed", cardCheckBox.checked);
     });
+
     return cardCheckBox;
 }
 
@@ -34,11 +34,9 @@ export default function card(title = "Add title" , info = "Add Info", isChecked 
     const box = createBox();
     const cardTitle = createTitle(title);
     const cardInfo = createInfo(info);
-    const cardCheckBox = createCheckbox(isChecked);
+    const cardCheckBox = createCheckbox(isChecked,box);
 
-    box.append(cardTitle);
-    box.append(cardInfo);
-    box.append(cardCheckBox);
+    box.append(cardTitle, cardInfo, cardCheckBox);
 
     return box;
 }
