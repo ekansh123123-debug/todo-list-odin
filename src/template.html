@@ -6,6 +6,7 @@
     <title>Todo List</title>
 </head>
 <body>
+
     <header class="app-header">
         <h1>My task</h1>
         <div id="btn">
@@ -22,21 +23,20 @@
             <form method="dialog">
                 <div class="form-group">
                     <label for="title" id="title">Add Title</label>
-                    <input type="text" required placeholder="Add Title....">
+                    <input name="title" type="text" required placeholder="Add Title....">
                 </div>
-                
+
                 <div class="form-group">
-                <label for="info">Add Details</label>
-                <input type="text" required placeholder="Information About task ...">
+                    <label for="info">Add Details</label>
+                    <input name="title" type="text" required placeholder="Task...">
                 </div>
 
                 <div class="dialog-actions">
-                    <button type="button" id="cancelBtn">Cancel</button>
                     <button type="submit" id="saveBtn">Add Task</button>
+                    <button type="button" id="cancelBtn">Cancel</button>
                 </div>
             </form>
         </dialog>
     </div>
-
 </body>
 </html>
