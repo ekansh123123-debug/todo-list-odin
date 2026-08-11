@@ -23,14 +23,18 @@
             <form method="dialog" id="todoForm">
                 <div class="form-group">
                     <label for="title" >Add Title</label>
-                    <input type="text" name="title" id="title" required placeholder="Add Title....">
+                    <input type="text" name="title" id="title" placeholder="Add Title.... " required>
                 </div>
 
                 <div class="form-group">
                     <label for="info">Add Details</label>
-                    <input type="text" id="info" name="info" required placeholder="Task...">
+                    <input type="text" id="info" name="info" placeholder="Task..." required>
                 </div>
 
+                <div class="form-group">
+                    <label for="dueDate">The Completion time</label>
+                    <input type="datetime-local" name="dueDate" id="dueDate">
+                </div>
                 <div class="dialog-actions">
                     <button type="submit" id="saveBtn">Add Task</button>
                     <button type="button" id="cancelBtn">Cancel</button>
