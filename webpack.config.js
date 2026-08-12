@@ -5,13 +5,18 @@ export default {
   mode: "production",
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: path.resolve(import.meta.dirname, "dist"),
     clean: true,
   },
   devtool: "eval-source-map",
   devServer: {
     watchFiles: ["./src/template.html"],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
