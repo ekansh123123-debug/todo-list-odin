@@ -45,7 +45,7 @@ const createDateContainer = (cardData) => {
 const createDueDate = (dueDate) =>{
     const date = document.createElement("span");
     date.classList.add("todo-due-date");
-    date.textContent = dueDate ? `Due : ${dueDate}` : "";
+    date.textContent = dueDate ? `Due : ${formateDate(dueDate)}` : "";
 
     return date;
 }
@@ -54,9 +54,18 @@ const createInitialDate = (initialDate) => {
     const date = document.createElement("span");
     date.classList.add("todo-create-date");
     initialDate = new Date(initialDate);
-    date.textContent = initialDate ? `Created : ${initialDate}` : "";
+    date.textContent = initialDate ? `Created : ${formateDate(initialDate)}` : "";
 
     return date;
+}
+
+const formateDate = (date) => {
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+    const dd = String(date.getDate()).padStart(2, '0');
+    const hh = String(date.getHours()).padStart(2, '0');
+    const min = String(date.getMinutes()).padStart(2, '0');
+    return  `${yyyy}-${mm}-${dd}T${hh}:${min}`;
 }
 
 export default function card(cardData) {
