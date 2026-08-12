@@ -17,17 +17,20 @@ const elements = {
 };
 
 elements.addTaskBtn.addEventListener("click",() => elements.dialog.showModal());
-
 elements.saveBtn.addEventListener("click" , () => {
-    const title = document.querySelector("#title").value;
-    const info = document.querySelector("#info").value;
-    const isChecked = false;
+    const cardData = {
+        "title": document.querySelector("#title").value,
+        "info" : document.querySelector("#info").value,
+        "inputDate" : document.querySelector("#dueDate").value,
+        "initialDate" : new Date(),
+        "isChecked" : false,
+    }
 
-    elements.todoContent.append(card(title ,info));
-    cards.push({title,info,isChecked});
+    elements.todoContent.append(card(cardData));
+    cards.push(cardData);
 
     elements.todoForm.reset();
     elements.dialog.close();
 })
-
 elements.cancleBtn.addEventListener("click", () => elements.dialog.close());
+

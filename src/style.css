@@ -305,3 +305,100 @@ body {
     background-color: #f3f4f6;
     color: #111827;
 }
+/* Card Container */
+.todo-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title   checkbox"
+    "info    info"
+    "dates   dates";
+  gap: 10px 12px;
+  align-items: center;
+
+  width: 100%;
+  max-width: 380px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.todo-card:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+/* Header & Content */
+.todo-title {
+  grid-area: title;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.todo-info {
+  grid-area: info;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.todo-checkbox {
+  grid-area: checkbox;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+/* Date Section Container */
+.todo-dates {
+  grid-area: dates;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Created Date Badge */
+.todo-created-date {
+  color: #94a3b8;
+}
+
+/* Due Date Badge */
+.todo-due-date {
+  color: #e11d48;
+  background-color: #ffe4e6;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-left: auto; /* Pushes due date to the right */
+}
+
+/* Completed Card State */
+.todo-card.completed {
+  background-color: #f8fafc;
+  border-color: #f1f5f9;
+  box-shadow: none;
+}
+
+.todo-card.completed .todo-title {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.todo-card.completed .todo-info,
+.todo-card.completed .todo-dates {
+  opacity: 0.5;
+}
