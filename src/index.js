@@ -1,6 +1,7 @@
 import "./style.css";
-import homePage from "./createHomePage.js";
+import createHomePage from "./createHomePage.js";
 import dialogManage from "./dialogMange.js";
+import showCompleteTask from "./showCompletedTask.js";
 
 let cards = [];
 
@@ -15,7 +16,7 @@ const elements = {
     'todoContent': document.querySelector("#todoContant")
 };
 
-elements.homeBtn.addEventListener("click", () => homePage(elements, cards));
+elements.homeBtn.addEventListener("click", () => createHomePage(elements.todoContent, cards));
 elements.addTaskBtn.addEventListener("click", () => elements.dialog.showModal());
 
 elements.saveBtn.addEventListener("click", () => dialogManage(elements, cards));
