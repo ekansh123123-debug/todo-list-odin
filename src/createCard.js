@@ -24,7 +24,7 @@ const createCheckbox = (isChecked, box, cards) =>{
     checkBox.type = "checkbox";
     checkBox.checked = isChecked;
 
-    checkBox.addEventListener("click",() =>{
+    checkBox.addEventListener("change",() =>{
         box.classList.toggle("completed", checkBox.checked);
         const targetCard = cards.find((item) => item.id === card.id);
         if (targetCard) {
