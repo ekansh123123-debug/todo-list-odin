@@ -18,17 +18,21 @@ const createInfo = (info) => {
     return cardInfo;
 }
 
-const createCheckbox = (isChecked, box) =>{
-    const cardCheckBox = document.createElement("input");
-    cardCheckBox.classList.add("todo-checkbox");
-    cardCheckBox.type = "checkbox";
-    cardCheckBox.checked = isChecked;
+const createCheckbox = (isChecked, box, cards) =>{
+    const checkBox = document.createElement("input");
+    checkBox.classList.add("todo-checkbox");
+    checkBox.type = "checkbox";
+    checkBox.checked = isChecked;
 
-    cardCheckBox.addEventListener("click",() =>{
-        box.classList.toggle("completed", cardCheckBox.checked);
+    checkBox.addEventListener("click",() =>{
+        box.classList.toggle("completed", checkBox.checked);
+        const targetCard = cards.find((item) => item.id === card.id);
+        if (targetCard) {
+            targetCard.isChecked = checkBox.checked;
+        }
     });
 
-    return cardCheckBox;
+    return checkBox;
 }
 
 const createDateContainer = (cardData) => {
@@ -68,11 +72,11 @@ const formateDate = (date) => {
     return  `${yyyy}-${mm}-${dd}T${hh}:${min}`;
 }
 
-export default function card(cardData) {
+export default function card(cardData,cards) {
     const box = createBox();
     const cardTitle = createTitle(cardData.title);
     const cardInfo = createInfo(cardData.info);
-    const cardCheckBox = createCheckbox(cardData.isChecked, box);
+    const cardCheckBox = createCheckbox(cardData.isChecked, box, cards);
     const dateContainer = createDateContainer(cardData);
 
     box.append(cardTitle, cardInfo, cardCheckBox ,dateContainer);
