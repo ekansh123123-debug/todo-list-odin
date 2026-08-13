@@ -8,7 +8,7 @@ let cards = [];
 const elements = {
     'addTaskBtn': document.querySelector("#addBtn"),
     'homeBtn': document.querySelector("#homeBtn"),
-    'completeBtn': document.querySelector("#completTask"),
+    'completeBtn': document.querySelector("#completedTask"),
     'saveBtn': document.querySelector("#saveBtn"),
     'cancelBtn': document.querySelector("#cancelBtn"),
     'dialog': document.querySelector("#dialog"),
@@ -18,6 +18,7 @@ const elements = {
 
 elements.homeBtn.addEventListener("click", () => createHomePage(elements.todoContent, cards));
 elements.addTaskBtn.addEventListener("click", () => elements.dialog.showModal());
+elements.completeBtn.addEventListener("click", () => showCompleteTask(elements.todoContent, cards));
 
 elements.saveBtn.addEventListener("click", () => dialogManage(elements, cards));
 elements.cancelBtn.addEventListener("click", () => elements.dialog.close());
