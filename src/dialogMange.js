@@ -15,5 +15,5 @@ export default function (elements, cards) {
 
     elements.todoForm.reset();
     elements.dialog.close();
-    homePage(elements, card);
+    homePage(elements.todoContent, card);
 }
