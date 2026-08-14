@@ -15,7 +15,6 @@ const elements = {
     "incompleteBtn": document.querySelector("#incompleteTask")
 };
 
-elements.todoContent.
 elements.homeBtn.addEventListener("click", () => homePage(elements.todoContent, cards));
 elements.addTaskBtn.addEventListener("click", () => elements.dialog.showModal());
 elements.completeBtn.addEventListener("click", () => showCompleteTask(elements.todoContent, cards));
