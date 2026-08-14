@@ -18,14 +18,14 @@ const createInfo = (info) => {
     return cardInfo;
 }
 
-const createCheckbox = (isChecked, box, cards) =>{
+const createCheckbox = (cardData, cards) =>{
     const checkBox = document.createElement("input");
     checkBox.classList.add("todo-checkbox");
     checkBox.type = "checkbox";
-    checkBox.checked = isChecked;
+    checkBox.checked = cardData.isChecked;
 
     checkBox.addEventListener("change", () => {
-        const cardIndex = cards.findIndex((card) => card.ID === box.dataset.id);
+        const cardIndex = cards.findIndex((card) => card.ID === cardData.ID);
         if (cardIndex !== -1) {
             cards[cardIndex].isChecked = checkBox.checked;
             localStorage.setItem("cards", JSON.stringify(cards));
@@ -75,7 +75,7 @@ export default function card(cardData,cards) {
     const box = createBox();
     const cardTitle = createTitle(cardData.title);
     const cardInfo = createInfo(cardData.info);
-    const cardCheckBox = createCheckbox(cardData.isChecked, box, cards);
+    const cardCheckBox = createCheckbox(cardData, cards);
     const dateContainer = createDateContainer(cardData);
 
     box.append(cardTitle, cardInfo, cardCheckBox ,dateContainer);
