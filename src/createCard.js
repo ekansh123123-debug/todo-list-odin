@@ -24,11 +24,11 @@ const createCheckbox = (isChecked, box, cards) =>{
     checkBox.type = "checkbox";
     checkBox.checked = isChecked;
 
-    checkBox.addEventListener("change",() =>{
-        box.classList.toggle("completed", checkBox.checked);
-        const targetCard = cards.find((item) => item.id === card.id);
-        if (targetCard) {
-            targetCard.isChecked = checkBox.checked;
+    checkBox.addEventListener("change", () => {
+        const cardIndex = cards.findIndex((card) => card.ID === box.dataset.id);
+        if (cardIndex !== -1) {
+            cards[cardIndex].isChecked = checkBox.checked;
+            localStorage.setItem("cards", JSON.stringify(cards));
         }
     });
 
