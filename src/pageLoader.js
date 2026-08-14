@@ -1,18 +1,22 @@
 import card from "./createCard.js";
 
-export function homePage(todoContent, cards) {
-    todoContent.textContent= "";
+function renderCards(todoContent, cards, filterFn) {
+    todoContent.textContent = "";
     cards
-      .forEach((checkedCard) => {
-        todoContent.append(card(checkedCard, cards));
-    });
+        .filter(filterFn)
+        .forEach((currentCard) => {
+            todoContent.append(card(currentCard, cards));
+        });
+}
+
+export function homePage(todoContent, cards) {
+    renderCards(todoContent, cards, () => true);
 }
 
 export function showCompleteTask(todoContent, cards) {
-    todoContent.textContent= "";
-    cards
-        .filter((currentCard) => !currentCard.isChecked)
-        .forEach((currentCard) => {
-            todoContent.append(card(currentCard,cards));
-    })
+    renderCards(todoContent, cards, (currentCard) => currentCard.isChecked);
+}
+
+export function showIncompleteTask(todoContent, cards) {
+    renderCards(todoContent, cards, (currentCard) => !currentCard.isChecked);
 }
