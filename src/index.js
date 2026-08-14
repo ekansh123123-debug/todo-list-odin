@@ -21,4 +21,6 @@ elements.completeBtn.addEventListener("click", () => showCompleteTask(elements.t
 elements.incompleteBtn.addEventListener("click", () => showIncompleteTask(elements.todoContent, cards));
 
 elements.saveBtn.addEventListener("click", () => dialogManage(elements, cards));
-elements.cancelBtn.addEventListener("click", () => elements.dialog.close());
+elements.cancelBtn.addEventListener("click", () => { elements.dialog.reset(); elements.dialog.close(); });
+
+homePage(elements.todoContent, cards);
