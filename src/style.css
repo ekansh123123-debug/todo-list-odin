@@ -504,3 +504,54 @@ body {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px var(--color-primary-ring);
 }
+#homeBtn:focus,
+#completedTask:focus,
+#addBtn:focus,
+#incompleteTask:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+#dialog:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+#dialog:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+#dialog:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+#dialog:focus:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+#dialog:focus:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+#dialog:focus-visible:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+#dialog:focus:focus-visible:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+#completedTask:focus,
+#addBtn:focus,
+#incompleteTask:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
+#dialog:focus,
+#dialog:focus-visible,
+#dialog:focus-within,
+#dialog:focus:focus-visible,
+#dialog:focus:focus-within,
+#dialog:focus-visible:focus-within,
+#dialog:focus:focus-visible:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
