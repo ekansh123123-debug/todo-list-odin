@@ -56,7 +56,7 @@ const createDueDate = (dueDate) =>{
 
 const createInitialDate = (initialDate) => {
     const date = document.createElement("span");
-    date.classList.add("todo-create-date");
+    date.classList.add("todo-created-date");
     initialDate = new Date(initialDate);
     date.textContent = initialDate ? `Created : ${formateDate(initialDate)}` : "";
 
