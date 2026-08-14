@@ -2,13 +2,14 @@ import card from "./createCard.js"
 import {homePage} from "./pageLoader.js";
 
 const getCardData = () => {
-    return {"ID" : crypto.randomUUID(),
+    return {
+            "ID" : crypto.randomUUID(),
             "title": document.querySelector("#title").value,
             "info": document.querySelector("#info").value,
             "inputDate": new Date(document.querySelector("#dueDate").value),
             "initialDate": new Date(),
-            "isChecked": false
-        }
+            "isChecked": false,
+            }
 }
 
 export default function (elements, cards) {
@@ -17,4 +18,5 @@ export default function (elements, cards) {
     elements.todoForm.reset();
     elements.dialog.close();
     homePage(elements.todoContent, cards);
+    localStorage.setItem("cards", JSON.stringify(cards));
 }
