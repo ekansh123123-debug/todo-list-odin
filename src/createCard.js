@@ -49,17 +49,16 @@ const createDateContainer = (cardData) => {
 const createDueDate = (dueDate) =>{
     const date = document.createElement("span");
     date.classList.add("todo-due-date");
-    date.textContent = dueDate ? `Due : ${formateDate(dueDate)}` : "";
-
+    const parsed = new Date(dueDate);
+    date.textContent = !isNaN(parsed) ? `Due : ${formateDate(parsed)}` : "";
     return date;
 }
 
 const createInitialDate = (initialDate) => {
     const date = document.createElement("span");
     date.classList.add("todo-created-date");
-    initialDate = new Date(initialDate);
-    date.textContent = initialDate ? `Created : ${formateDate(initialDate)}` : "";
-
+    const parsed = new Date(initialDate);
+    date.textContent = !isNaN(parsed) ? `Created : ${formateDate(parsed)}` : "";
     return date;
 }
 
