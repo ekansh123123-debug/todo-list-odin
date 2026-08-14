@@ -1,7 +1,7 @@
 import "./style.css";
 import dialogManage from "./dialogMange.js";
 import { homePage, showCompleteTask , showIncompleteTask } from "./pageLoader.js";
-let cards = [];
+let cards = JSON.parse(localStorage.getItem("cards")) || [];
 
 const elements = {
     "addTaskBtn": document.querySelector("#addBtn"),
