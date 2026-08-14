@@ -15,8 +15,8 @@ const getCardData = () => {
 export default function (elements, cards) {
     const cardData = getCardData();
     cards.push(cardData);
+    localStorage.setItem("cards", JSON.stringify(cards));
     elements.todoForm.reset();
     elements.dialog.close();
     homePage(elements.todoContent, cards);
-    localStorage.setItem("cards", JSON.stringify(cards));
 }
